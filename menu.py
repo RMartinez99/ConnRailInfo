@@ -29,6 +29,7 @@ class Menu:
     
   
   def showMenu(self):
+    print("Timetable Maker v1.1 Beta")
     code = input("Please enter a station code for a MAJOR New Haven Line station.\n")
     while code not in self.stations:
         print("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\n The station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
@@ -45,14 +46,18 @@ class Menu:
                     Any other key: Exit program
     
                 """)
-    choice = input("")
+    self.timeTable.optionProcessor()
+
+class AltMenu:
+    def __init__(self):
+        self.showMenu()
+
+    def showMenu(self):
+       print(""" 
+                    1. Create Timetable
+                    2. Modify Timetable
+                    3. Delete Timetable
+                    4. Show Timetables
+                    Any other key: Exit program
     
-    if choice == "1":
-        pass
-    elif choice == "2":
-        pass
-    elif choice == "3":
-        pass
-    else:
-        sys.exit(0)
-       
+                """)
