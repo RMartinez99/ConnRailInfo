@@ -12,11 +12,11 @@ class TimeTableMachine():
         if choice == "1":
             self.createTable()
         elif choice == "2":
-            print("feature coming soon in a later version")
+            print("Feature coming soon in Version 2")
             show = Options()
             self.optionProcessor()
         elif choice == "3":
-            print("feature coming soon in a later version")
+            print("Feature coming soon in Version 2")
             show = Options()
             self.optionProcessor()
         elif choice == "4":
