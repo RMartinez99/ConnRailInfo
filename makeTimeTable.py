@@ -1,6 +1,5 @@
 import json
 import sys
-from menu import AltMenu
 
 class TimeTableMachine():
     def __init__(self, station):
@@ -34,13 +33,27 @@ class TimeTableMachine():
         dest = input("Destination: ")
         trainString = f"Station: {self.station}, Company: {company}, #{trainNum}, Due: {arrTime}, Destination: {dest}"
         self.timeTable[entry] = trainString
-        self.showMenu = AltMenu()
+        show = Options()
         self.optionProcessor()
 
     
     def showTable(self):
         print(self.timeTable)
-        self.showMenu = AltMenu()
+        show = Options()
         self.optionProcessor()
+
+class Options:
+    def __init__(self):
+        self.showMenu()
+
+    def showMenu(self):
+       print(""" 
+                    1. Create Timetable
+                    2. Modify Timetable
+                    3. Delete Timetable
+                    4. Show Timetables
+                    Any other key: Exit program
+    
+                """)
 
     

@@ -48,16 +48,3 @@ class Menu:
                 """)
     self.timeTable.optionProcessor()
 
-class AltMenu:
-    def __init__(self):
-        self.showMenu()
-
-    def showMenu(self):
-       print(""" 
-                    1. Create Timetable
-                    2. Modify Timetable
-                    3. Delete Timetable
-                    4. Show Timetables
-                    Any other key: Exit program
-    
-                """)
