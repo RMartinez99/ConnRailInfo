@@ -13,12 +13,8 @@ class TimeTableMachine():
             self.createTable()
         elif choice == "2":
             self.modTimeTable()
-            show = Options()
-            self.optionProcessor()
         elif choice == "3":
-            print("Feature coming soon in Version 2")
-            show = Options()
-            self.optionProcessor()
+            self.delTimeTable()
         elif choice == "4":
             self.showTable()
         else:
@@ -57,6 +53,15 @@ class TimeTableMachine():
         dest = input("Destination: ")
         trainString = f"Station: {self.station}, Company: {company}, #{trainNum}, Due: {arrTime}, Destination: {dest}"
         self.timeTable[entry] = trainString
+        show = Options()
+        self.optionProcessor()
+    
+    def delTimeTable(self):
+        entry = input("Tell me what entry you want to delete.")
+        while entry not in self.timeTable:
+            print("Error: Could not delete. Entry not found")
+            entry = input("")
+        self.timeTable.pop(entry)
         show = Options()
         self.optionProcessor()
 
