@@ -1,6 +1,6 @@
 import json
 import sys
-#Version 2.1, Build 8c
+#Version 2.1, Build 8d
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station
@@ -25,7 +25,7 @@ class TimeTableMachine():
         print("Give me an entry number, please")
         entry = input("")
         while entry in self.timeTable:
-            print("Error: Entry exists for today's schedule. Please try another number.")
+            print("Error: Entry exists for today's schedule. Please try another number.\n")
             entry = input("")
         company = input("Rail Company: ")
         trainNum = input("Train Number: ")
@@ -43,7 +43,7 @@ class TimeTableMachine():
         self.optionProcessor()
     
     def modTimeTable(self):
-        entry = input("Give me an entry number, please")
+        entry = input("Give me an entry number, please.\n")
         while entry not in self.timeTable:
             print("Error: Entry not found. Try another entry")
             entry = input("")
@@ -57,7 +57,7 @@ class TimeTableMachine():
         self.optionProcessor()
     
     def delTimeTable(self):
-        entry = input("Tell me what entry you want to delete.")
+        entry = input("Tell me what entry you want to delete.\n")
         while entry not in self.timeTable:
             print("Error: Could not delete. Entry not found. Enter a valid entry.")
             entry = input("")
