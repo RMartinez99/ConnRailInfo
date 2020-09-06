@@ -1,6 +1,6 @@
 import json
 import sys
-
+#Version 2.0, Build 8a
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station

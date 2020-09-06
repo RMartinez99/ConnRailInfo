@@ -29,7 +29,7 @@ class Menu:
     
   
   def showMenu(self):
-    print("Timetable Maker v2.0 Beta")
+    print("Timetable Maker v2.0")
     code = input("Please enter a station code for a MAJOR New Haven Line station.\n")
     while code not in self.stations:
         print("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\nThe station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
