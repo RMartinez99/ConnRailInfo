@@ -1,6 +1,6 @@
 from menu import Menu
 from menu import major_stations
-#Version 3.0 Beta, Build 8b
+#Version 2.1, Build 8c
 stations = major_stations
 
 runTheThingy = Menu(stations)
