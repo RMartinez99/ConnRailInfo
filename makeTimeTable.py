@@ -1,6 +1,6 @@
 import json
 import sys
-#Version 3.0 Beta, Build 8e
+
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station
@@ -22,7 +22,10 @@ class TimeTableMachine():
                 sys.exit(0)
             else:
                 print(f"Saving data for station {self.station}.")
-        
+                
+                with open(f'{self.station}.json', 'w') as w:
+                    json.dump(self.timeTable, w, sort_keys=True, indent = 3)
+
     
     def createTable(self):
         print("Give me an entry number, please")
