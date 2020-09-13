@@ -18,7 +18,10 @@ class TimeTableMachine():
         elif choice == "4":
             self.showTable()
         else:
-            sys.exit(0)
+            if self.timeTable == {}:
+                sys.exit(0)
+            else:
+                print(f"Saving data for station {self.station}.")
         
     
     def createTable(self):
