@@ -1,6 +1,6 @@
 import json
 import sys
-
+#Version 3.1 Beta Build 11
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station
@@ -37,7 +37,7 @@ class TimeTableMachine():
         trainNum = input("Train Number: ")
         arrTime = input("Expected Arrival: ")
         dest = input("Destination: ")
-        trainString = f"Station: {self.station}, Company: {company}, #{trainNum}, Due: {arrTime}, Destination: {dest}"
+        trainString = f"Company: {company}, #{trainNum}, Due: {arrTime}, Destination: {dest}"
         self.timeTable[entry] = trainString
         show = Options()
         self.optionProcessor()
