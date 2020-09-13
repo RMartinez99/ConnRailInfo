@@ -1,6 +1,6 @@
 import json
 import sys
-#Version 3.1 Beta Build 11
+#Version 3.1 Beta Build 12
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station
@@ -17,6 +17,8 @@ class TimeTableMachine():
             self.delTimeTable()
         elif choice == "4":
             self.showTable()
+        elif choice == "5":
+            print("Read JSON File is coming in a future build.")
         else:
             if self.timeTable == {}:
                 sys.exit(0)
@@ -77,10 +79,11 @@ class Options:
 
     def showMenu(self):
        print(""" 
-                    1. Create Timetable
-                    2. Modify Timetable
-                    3. Delete Timetable
-                    4. Show Timetables
+                    1. Create Timetable Entry
+                    2. Modify Timetable Entry
+                    3. Delete Timetable Entry
+                    4. Show Timetable Entries
+                    5. Read Timetable File
                     Any other key: Exit program
     
                 """)

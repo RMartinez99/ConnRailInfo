@@ -1,7 +1,7 @@
 import sys
 from makeTimeTable import TimeTableMachine
 
-
+#build 12
 major_stations = {"NYG": "Grand Central",
 "NYP" : "New York Penn Station",
 "125" : "Harlem - 125th Street", 
@@ -40,10 +40,11 @@ class Menu:
     self.timeTable = TimeTableMachine(self.stations[code])
     
     print(""" 
-                    1. Create Timetable
-                    2. Modify Timetable
-                    3. Delete Timetable
-                    4. Show Timetables
+                    1. Create Timetable Entry
+                    2. Modify Timetable Entry
+                    3. Delete Timetable Entry
+                    4. Show Timetable Entries
+                    5. Read Timetable File
                     Any other key: Exit program
     
                 """)
