@@ -44,7 +44,6 @@ class Menu:
                     2. Modify Timetable Entry
                     3. Delete Timetable Entry
                     4. Show Timetable Entries
-                    5. Read Timetable File
                     Any other key: Exit program
     
                 """)

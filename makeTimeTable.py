@@ -17,8 +17,6 @@ class TimeTableMachine():
             self.delTimeTable()
         elif choice == "4":
             self.showTable()
-        elif choice == "5":
-            print("Read JSON File is coming in a future build.")
         else:
             if self.timeTable == {}:
                 sys.exit(0)
@@ -83,7 +81,6 @@ class Options:
                     2. Modify Timetable Entry
                     3. Delete Timetable Entry
                     4. Show Timetable Entries
-                    5. Read Timetable File
                     Any other key: Exit program
     
                 """)
