@@ -1,5 +1,6 @@
 import json
 import sys
+import sqlite3
 #Version 4.0 Beta
 class TimeTableMachine():
     def __init__(self, station):
@@ -21,7 +22,13 @@ class TimeTableMachine():
             if self.timeTable == {}:
                 print("Sorry, I cannot put empty data into database. It makes no sense to do so.")
             else:
-                pass
+                connectMe = sqlite3.connect("TrainStatDB.sqlite3")
+                for key, value in self.timeTable.items():
+                    connectMe.execute(f"""
+                    INSERT INTO "Trains"
+                    ("Entry","TrainInfo")
+                    VALUES ('{key}','{value}');
+                    """)
         else:
             if self.timeTable == {}:
                 sys.exit(0)
