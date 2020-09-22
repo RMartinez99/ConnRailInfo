@@ -1,5 +1,5 @@
 from menu import Menu
 
-#Version 3.1
+#Version 4.0 Beta
 
 runTheThingy = Menu()

@@ -3,7 +3,7 @@ from makeTimeTable import TimeTableMachine
 import sqlite3
 import json
 
-#build 13
+#Version 4.0 Beta
 
 
 class Menu:
@@ -17,7 +17,7 @@ class Menu:
     
   
   def showMenu(self):
-    print("Timetable Maker v3.1")
+    print("Timetable Maker v4.0 Beta")
     code = input("Please enter a station code for a MAJOR New Haven Line/CTRail station.\n")
     while code not in self.stations:
         print("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\nThe station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
