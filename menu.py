@@ -1,36 +1,23 @@
 import sys
 from makeTimeTable import TimeTableMachine
+import sqlite3
+import json
 
-#build 12
-major_stations = {"NYG": "Grand Central",
-"NYP" : "New York Penn Station",
-"125" : "Harlem - 125th Street", 
-"153" : "Yankees - E. 153rd Street", 
-"FRD" : "Fordham", 
-"NRO" : "New Rochelle", 
-"PCX" : "Port Chester",
-"GCH" : "Greenwich",
-"STM" : "Stamford", 
-"NCN" : "New Canaan", 
-"SNW" : "South Norwalk",
-"DBY" : "Danbury",
-"BRP" : "Bridgeport",
-"WBR" : "Waterbury",
-"NHV" : "New Haven Union Station",
-"STS" : "New Haven - State St.",
-"OSB" : "Old Saybrook",
-"NLC" : "New London",
-"HFD" : "Hartford",
-"SPG" : "Springfield"}
+#build 13
+
 
 class Menu:
-  def __init__(self, major_stations):
-    self.stations = major_stations
+  def __init__(self):
+    sqliteConnection = sqlite3.connect('Stations.sqlite3')
+    cursor = sqliteConnection.cursor()
+    cursor.execute("select * from Stations")
+    stations_L = cursor.fetchall()
+    self.stations = dict(stations_L)
     self.showMenu()
     
   
   def showMenu(self):
-    print("Timetable Maker v3.1 Beta")
+    print("Timetable Maker v3.1")
     code = input("Please enter a station code for a MAJOR New Haven Line/CTRail station.\n")
     while code not in self.stations:
         print("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\nThe station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
