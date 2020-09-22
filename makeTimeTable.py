@@ -17,6 +17,11 @@ class TimeTableMachine():
             self.delTimeTable()
         elif choice == "4":
             self.showTable()
+        elif choice == "5":
+            if self.timeTable == {}:
+                print("Sorry, I cannot put empty data into database. It makes no sense to do so.")
+            else:
+                pass
         else:
             if self.timeTable == {}:
                 sys.exit(0)
