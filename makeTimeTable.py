@@ -24,11 +24,8 @@ class TimeTableMachine():
             else:
                 connectMe = sqlite3.connect("TrainStatDB.sqlite3")
                 for key, value in self.timeTable.items():
-                    connectMe.execute(f"""
-                    INSERT INTO "Trains"
-                    ("Entry","TrainInfo")
-                    VALUES ('{key}','{value}');
-                    """)
+                     connectMe.execute("INSERT INTO Trains (\"Entry\",\"TrainInfo\") VALUES ("+key+", "+value+"")
+                    
         else:
             if self.timeTable == {}:
                 sys.exit(0)
