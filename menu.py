@@ -18,7 +18,7 @@ class Menu:
   
   def showMenu(self):
     print("Timetable Maker v4.0 Beta")
-    code = input("Please enter a station code for a MAJOR New Haven Line/CTRail station.\n")
+    code = input("Please enter a station code for a New Haven Line/CTRail terminal station.\n")
     while code not in self.stations:
         print("Sorry, but an error occurred. This occurs for one of 4 reasons:\nThe station is not a major station,\nA misentry with a station code,\nThe station doesn't exist,\nOr is not on the New Haven, Shore Line East, or Hartford Lines.\n\nReenter again.")
         code = input("")
@@ -31,7 +31,8 @@ class Menu:
                     2. Modify Timetable Entry
                     3. Delete Timetable Entry
                     4. Show Timetable Entries
-                    Any other key: Exit program
+                    5. Save data to database
+                    Any other key: Exit program and save data as JSON
     
                 """)
     self.timeTable.optionProcessor()

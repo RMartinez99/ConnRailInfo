@@ -81,7 +81,8 @@ class Options:
                     2. Modify Timetable Entry
                     3. Delete Timetable Entry
                     4. Show Timetable Entries
-                    Any other key: Exit program
+                    5. Save Entries to Database
+                    Any other key: Exit program and save data to JSON
     
                 """)
 
