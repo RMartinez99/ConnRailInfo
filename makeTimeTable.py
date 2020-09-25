@@ -1,7 +1,7 @@
 import json
 import sys
 import sqlite3
-#Version 4.0 Beta
+#Version 4.0 Beta Build 15
 class TimeTableMachine():
     def __init__(self, station):
         self.station = station
@@ -23,8 +23,12 @@ class TimeTableMachine():
                 print("Sorry, I cannot put empty data into database. It makes no sense to do so.")
             else:
                 connectMe = sqlite3.connect("TrainStatDB.sqlite3")
-                for key, value in self.timeTable.items():
-                     connectMe.execute("INSERT INTO Trains (\"Entry\",\"TrainInfo\") VALUES ("+key+", "+value+"")
+                runMe = connectMe.cursor()
+                attrib_names = ", ".join(self.timeTable.keys())
+                attrib_values = ", ".join("?" * len(self.timeTable.keys()))
+                sql = f"INSERT INTO Trains ({attrib_names}) VALUES ({attrib_values})"
+                runMe.execute(sql, list(self.timeTable.values()))
+
                     
         else:
             if self.timeTable == {}:

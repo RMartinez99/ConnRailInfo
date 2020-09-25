@@ -3,7 +3,7 @@ from makeTimeTable import TimeTableMachine
 import sqlite3
 import json
 
-#Version 4.0 Beta
+#Version 4.0 Beta Build 15
 
 
 class Menu:
