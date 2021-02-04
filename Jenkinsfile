@@ -1,5 +1,5 @@
 pipeline {
-     agent { '/usr/bin/python3' }
+     agent { any }
      stages {
          
          stage('Making Sure the parts work') {
