@@ -5,7 +5,7 @@ node{
     }
     
     stage('Making sure the parts work'){
-        sh 'pytest test_Functions.py'
+        sh 'python3 test_Functions.py'
     }
     
     stage('Piecing it together...'){
