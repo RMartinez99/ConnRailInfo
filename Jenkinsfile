@@ -5,8 +5,8 @@ node{
     }
     
     stage('Making sure the parts work'){
-        
-        'python3 test.py'
+        sh 'sudo yum install python3'
+        sh 'python3 test.py'
         
     }
     
