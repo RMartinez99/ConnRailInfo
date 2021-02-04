@@ -5,9 +5,9 @@ node{
     }
     
     stage('Making sure the parts work'){
-        steps{
-            sh 'python3 test.py'
-        }
+        
+        sh 'python3 test.py'
+        
     }
     
     
