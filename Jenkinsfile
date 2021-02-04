@@ -28,13 +28,11 @@ pipeline {
         }
         stage('Container Execution, on private EC2'){
             steps{
-                def dockerRm = 'docker rm -f connrailinfo'
-                def dockerRmI = 'docker rmi rm267/connrailinfo'
-                def dockerRun = 'sudo docker run -it hello-demo test_Events.py'
+                
                 sshagent(['docker-server']) {
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRm}"
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRmI}"
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRun}"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 docker rm -f connrailinfo"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 docker rmi rm267/connrailinfo"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 sudo docker run -it hello-demo test.py"
                 
                 }
         
