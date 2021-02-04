@@ -1,7 +1,7 @@
 node{
     
     stage('GitHub Checkout'){
-        git branch: 'master', credentialsId: 'git-creds', url: 'https://github.com/RMartinez99/ConnRailInfo'
+        git branch: 'dev-unstable', credentialsId: 'git-creds', url: 'https://github.com/RMartinez99/ConnRailInfo'
     }
     
     stage('Making sure the parts work'){
@@ -16,17 +16,17 @@ node{
     stage('Sailing off to Docker...'){
 
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-            sh "docker login -u RMartinez99 -p ${dockerHubPwd}"
+            sh "docker login -u rm267 -p ${dockerHubPwd}"
     
             }
         
-        sh 'docker push RMartinez99/CT'
+        sh 'docker push rm267/ConnRailInfo1'
     
     }
 
     stage('Container Execution, on private EC2'){
-        def dockerRm = 'docker rm -f ConnRailInfo'
-        def dockerRmI = 'docker rmi RMartinez99/ConnRailInfo'
+        def dockerRm = 'docker rm -f ConnRailInfo1'
+        def dockerRmI = 'docker rmi rm267/ConnRailInfo1'
         def dockerRun = 'sudo docker run -it hello-demo test_Events.py'
         sshagent(['docker-server']) {
             sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRm}"
