@@ -4,8 +4,13 @@ node{
         git branch: 'dev-unstable', credentialsId: 'git-creds', url: 'https://github.com/RMartinez99/ConnRailInfo'
     }
     
+    // stage('Making sure the parts work'){
+    //     sh 'sudo python3 test_Functions.py'
+    // }
     stage('Making sure the parts work'){
-        sh 'python3 test_Functions.py'
+        withEnv(["HOME=${env.WORKSPACE}"]) {
+                sh 'python3 test_Functions.py'
+        }
     }
     
     stage('Piecing it together...'){
