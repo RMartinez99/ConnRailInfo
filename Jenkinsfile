@@ -1,5 +1,5 @@
 pipeline {
-     agent { image 'python:3.7.9' }
+     agent { none }
      stages {
          
          stage('Making Sure the parts work') {
