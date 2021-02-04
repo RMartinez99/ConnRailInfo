@@ -8,7 +8,7 @@ class BasicTestCase(unittest.TestCase):
         cursor = sqliteConnection.cursor()
         cursor.execute("select * from Stations")
         stations_L = cursor.fetchall()
-        stations = dict(stations_L)
+        # stations = dict(stations_L)
         print("PASS")
 
     def test_json(self):
