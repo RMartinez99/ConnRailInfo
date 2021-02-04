@@ -1,5 +1,5 @@
 pipeline {
-     agent { docker{image 'any'} }
+     agent { docker { image 'python:3.5.1' }}
      stages {
          
          stage('Making Sure the parts work') {
