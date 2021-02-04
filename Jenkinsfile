@@ -9,7 +9,7 @@ node{
     }
     
     stage('Piecing it together...'){
-        sh 'docker build -t ConnRailInfo .'
+        sh 'docker build -t connrailinfo .'
     
     }
 
@@ -20,13 +20,13 @@ node{
     
             }
         
-        sh 'docker push rm267/ConnRailInfo1'
+        sh 'docker push rm267/connrailinfo'
     
     }
 
     stage('Container Execution, on private EC2'){
-        def dockerRm = 'docker rm -f ConnRailInfo1'
-        def dockerRmI = 'docker rmi rm267/ConnRailInfo1'
+        def dockerRm = 'docker rm -f connrailinfo'
+        def dockerRmI = 'docker rmi rm267/connrailinfo'
         def dockerRun = 'sudo docker run -it hello-demo test_Events.py'
         sshagent(['docker-server']) {
             sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRm}"
