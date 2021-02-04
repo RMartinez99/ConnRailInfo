@@ -1,5 +1,5 @@
 pipeline {
-     agent { {docker{python3} }}
+     agent { {docker{"python:3"} }}
      stages {
          
          stage('Making Sure the parts work') {
