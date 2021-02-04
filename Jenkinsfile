@@ -34,9 +34,9 @@ pipeline {
         def dockerRmI = 'docker rmi rm267/connrailinfo'
         def dockerRun = 'sudo docker run -it hello-demo test_Events.py'
         sshagent(['docker-server']) {
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRm}"
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRmI}"
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRun}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRm}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRmI}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@18.234.192.242 ${dockerRun}"
            
         }
     
