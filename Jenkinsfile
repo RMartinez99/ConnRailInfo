@@ -1,8 +1,8 @@
 node{
     
-    stage('GitHub Checkout'){
-        git branch: 'dev-unstable', url: 'https://github.com/RMartinez99/ConnRailInfo'
-    }
+    // stage('GitHub Checkout'){
+    //     git branch: 'dev-unstable', url: 'https://github.com/RMartinez99/ConnRailInfo'
+    // }
     
     stage('Making sure the parts work'){
          sh 'python3 test.py'
