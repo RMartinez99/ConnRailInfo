@@ -29,9 +29,9 @@ node{
         def dockerRmI = 'docker rmi RMartinez99/ConnRailInfo'
         def dockerRun = 'sudo docker run -it hello-demo test_Events.py'
         sshagent(['docker-server']) {
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@54.90.31.156 ${dockerRm}"
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@54.90.31.156 ${dockerRmI}"
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@54.90.31.156 ${dockerRun}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRm}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRmI}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@52.3.241.42 ${dockerRun}"
            
         }
     
