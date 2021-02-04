@@ -1,7 +1,7 @@
 node{
     
     stage('GitHub Checkout'){
-        git branch: 'dev-unstable', credentialsId: 'git-creds', url: 'https://github.com/RMartinez99/ConnRailInfo'
+        git branch: 'dev-unstable', url: 'https://github.com/RMartinez99/ConnRailInfo'
     }
     
     stage('Making sure the parts work'){
