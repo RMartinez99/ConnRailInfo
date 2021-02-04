@@ -1,5 +1,5 @@
 pipeline {
-     agent { docker { image 'python:3.5.1' }}
+     agent { docker { image 'python' }}
      stages {
          
          stage('Making Sure the parts work') {
@@ -19,7 +19,7 @@ pipeline {
         stage('Sailing off to Docker...'){
             steps{
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-                    sh "docker login -u rm267 -p ${dockerHubPwd}"
+                    sh "docker login -u rm267 -p placeholder"
         
                     }
             
