@@ -4,14 +4,12 @@ node{
         git branch: 'dev-unstable', credentialsId: 'git-creds', url: 'https://github.com/RMartinez99/ConnRailInfo'
     }
     
-    // stage('Making sure the parts work'){
-    //     sh 'sudo python3 test_Functions.py'
-    // }
     stage('Making sure the parts work'){
-        withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'python3 test_Functions.py'
+        steps{
+            sh 'python3 test.py'
         }
     }
+    
     
     stage('Piecing it together...'){
         sh 'docker build -t connrailinfo .'
