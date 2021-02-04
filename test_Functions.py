@@ -27,4 +27,5 @@ def test_json():
     else:
         with open(f'{station}.json', 'w') as w:
             json.dump(timeTable, w, sort_keys=True, indent = 3)
+        sys.exit(0)
     
