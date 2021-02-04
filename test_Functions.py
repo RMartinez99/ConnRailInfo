@@ -1,6 +1,6 @@
 import sqlite3
 import json
-import sys
+# import sys
 
 def test_sqlite():
     sqliteConnection = sqlite3.connect('Stations.sqlite3')
@@ -22,10 +22,8 @@ def test_json():
     timeTable[entry] = trainString
     if timeTable == {}:
         print("FAIL")
-        sys.exit(0)
     
     else:
         with open(f'{station}.json', 'w') as w:
             json.dump(timeTable, w, sort_keys=True, indent = 3)
-        sys.exit(0)
     
